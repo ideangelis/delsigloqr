@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Audio accesible móvil</title>
+
+  <!-- CSP para permitir scripts inline en GitHub Pages -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src 'self';" />
+  
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="no-referrer" />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #000;
+      font-family: sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    button {
+      font-size: 8vw;
+      padding: 6rem 3rem;
+      background-color: #FFF;
+      color: #000;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px #FFF;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+    button:focus {
+      outline: 4px solid #FFD700;
+    }
+  </style>
+</head>
+<body role="main" aria-label="Reproductor de audio accesible">
+
+  <audio id="audio" preload="auto">
+    <source src="L31-TM.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio.
+  </audio>
+
+  <button id="activarSonido" aria-label="Reproducir sonido" role="button">
+    🔊 Escuchar Ahora
+  </button>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const btn = document.getElementById('activarSonido');
+
+    btn.addEventListener('click', () => {
+      if (navigator.vibrate) {
+        navigator.vibrate(200);
+      }
+      audio.currentTime = 0;
+      audio.play().catch(err => {
+        console.error("Error al reproducir audio:", err);
+      });
+    });
+  </script>
+</body>
+</html>
