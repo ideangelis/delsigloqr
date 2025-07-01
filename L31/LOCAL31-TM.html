@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Del Siglo QR - Local 31</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="SDS-Favicon.png" />
+
   <!-- CSP para permitir scripts inline en GitHub Pages -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src 'self';" />
   
@@ -18,12 +21,16 @@
       background-color: #000;
       font-family: sans-serif;
       -webkit-tap-highlight-color: transparent;
-    }
-    body {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       padding: 1rem;
+    }
+    img.logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 1rem;
     }
     button {
       font-size: 8vw;
@@ -44,6 +51,9 @@
   </style>
 </head>
 <body role="main" aria-label="Reproductor de audio accesible">
+
+  <!-- Logo en la parte superior -->
+  <img src="SDS-Logo.jpg" alt="Logo Shopping del Siglo" class="logo" />
 
   <audio id="audio" preload="auto">
     <source src="L31-TM.mp3" type="audio/mpeg" />
