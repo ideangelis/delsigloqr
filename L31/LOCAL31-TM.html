@@ -8,108 +8,40 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="SDS-Favicon.png" />
 
-  <!-- CSP para permitir scripts inline en GitHub Pages -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src 'self';" />
+  <!-- CSP actualizada: sin 'unsafe-inline' -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; media-src 'self';" />
   
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="referrer" content="no-referrer" />
 
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      background-color: #000;
-      font-family: sans-serif;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-      position: relative;
-
-      background-image: url('BG-SDS.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    img.logo {
-      max-width: 360px;
-      height: auto;
-      margin-bottom: 1rem; /* Espacio entre logo y botón */
-    }
-
-    button {
-      font-size: 8vw;
-      padding: 6rem 3rem;
-      background-color: #FFF;
-      color: #000;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      box-shadow: 0 0 15px #FFF;
-      width: 100%;
-      max-width: 500px;
-      text-align: center;
-    }
-
-    button:focus {
-      outline: 4px solid #FFD700;
-    }
-
-    .footer-link {
-      position: fixed;
-      bottom: 1rem;
-      text-align: center;
-      width: 100%;
-    }
-
-    .footer-link a {
-      color: #FFF;
-      text-decoration: underline;
-      font-size: 0.9rem;
-    }
-  </style>
+  <!-- Archivos externos -->
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body role="main" aria-label="Reproductor de audio accesible">
 
-  <!-- Logo pegado al botón -->
+  <!-- Logo -->
   <img src="SDS-Logo.jpg" alt="Logo Shopping del Siglo" class="logo" />
 
+  <!-- Audio -->
   <audio id="audio" preload="auto">
     <source src="L31-TM.mp3" type="audio/mpeg" />
     <source src="L31-TM.mp3" type="audio/mp3" />
     Tu navegador no soporta audio.
   </audio>
 
+  <!-- Botón -->
   <button id="activarSonido" tabindex="0" aria-label="Reproducir sonido" role="button">
     🔊 Local 31 - Todo Moda
   </button>
 
-  <!-- Enlace para reportar un error (siempre fijo abajo) -->
+  <!-- Enlace para reportar errores -->
   <div class="footer-link">
     <a href="mailto:ideangelis@outlook.com.ar?subject=Reporte%20de%20error%20en%20Local%2031">
       Reportar un error en esta página
     </a>
   </div>
 
-  <script>
-    const audio = document.getElementById('audio');
-    const btn = document.getElementById('activarSonido');
-
-    btn.addEventListener('click', () => {
-      if (navigator.vibrate) {
-        navigator.vibrate(200);
-      }
-      audio.currentTime = 0;
-      audio.play().catch(err => {
-        console.error("Error al reproducir audio:", err);
-      });
-    });
-  </script>
+  <!-- Script externo -->
+  <script src="main.js"></script>
 </body>
 </html>
