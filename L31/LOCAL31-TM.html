@@ -27,14 +27,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
       padding: 1rem;
+      position: relative;
     }
 
     img.logo {
       max-width: 200px;
       height: auto;
-      margin-top: 0.5rem;
+      margin-bottom: 1rem; /* Cerca del botón */
     }
 
     button {
@@ -56,7 +56,8 @@
     }
 
     .footer-link {
-      margin-bottom: 1rem;
+      position: absolute;
+      bottom: 1rem;
       text-align: center;
     }
 
@@ -69,7 +70,7 @@
 </head>
 <body role="main" aria-label="Reproductor de audio accesible">
 
-  <!-- Logo en la parte superior (pegado arriba) -->
+  <!-- Logo cerca del botón -->
   <img src="SDS-Logo.jpg" alt="Logo Shopping del Siglo" class="logo" />
 
   <audio id="audio" preload="auto">
@@ -77,12 +78,11 @@
     Tu navegador no soporta audio.
   </audio>
 
-  <!-- Botón centrado -->
   <button id="activarSonido" aria-label="Reproducir sonido" role="button">
     🔊 Local 31 - Todo Moda
   </button>
 
-  <!-- Enlace para reportar un error, bien abajo -->
+  <!-- Enlace fijo abajo de la pantalla -->
   <div class="footer-link">
     <a href="mailto:ideangelis@outlook.com.ar?subject=Reporte%20de%20error%20en%20Local%2031">
       Reportar un error en esta página
