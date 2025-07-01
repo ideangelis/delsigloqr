@@ -26,6 +26,7 @@
     body {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       padding: 1rem;
       position: relative;
@@ -34,7 +35,7 @@
     img.logo {
       max-width: 200px;
       height: auto;
-      margin-bottom: 1rem; /* Cerca del botón */
+      margin-bottom: 1rem; /* Espacio entre logo y botón */
     }
 
     button {
@@ -56,9 +57,10 @@
     }
 
     .footer-link {
-      position: absolute;
+      position: fixed;
       bottom: 1rem;
       text-align: center;
+      width: 100%;
     }
 
     .footer-link a {
@@ -70,7 +72,7 @@
 </head>
 <body role="main" aria-label="Reproductor de audio accesible">
 
-  <!-- Logo cerca del botón -->
+  <!-- Logo pegado al botón -->
   <img src="SDS-Logo.jpg" alt="Logo Shopping del Siglo" class="logo" />
 
   <audio id="audio" preload="auto">
@@ -82,7 +84,7 @@
     🔊 Local 31 - Todo Moda
   </button>
 
-  <!-- Enlace fijo abajo de la pantalla -->
+  <!-- Enlace para reportar un error (siempre fijo abajo) -->
   <div class="footer-link">
     <a href="mailto:ideangelis@outlook.com.ar?subject=Reporte%20de%20error%20en%20Local%2031">
       Reportar un error en esta página
