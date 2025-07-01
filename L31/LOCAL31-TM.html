@@ -21,10 +21,11 @@
       background-color: #000;
       font-family: sans-serif;
       -webkit-tap-highlight-color: transparent;
+    }
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       padding: 1rem;
     }
     img.logo {
@@ -44,9 +45,20 @@
       width: 100%;
       max-width: 500px;
       text-align: center;
+      margin-top: auto;
     }
     button:focus {
       outline: 4px solid #FFD700;
+    }
+    .footer-link {
+      margin-top: auto;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .footer-link a {
+      color: #FFF;
+      text-decoration: underline;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -64,12 +76,12 @@
     🔊 Local 31 - Todo Moda
   </button>
 
-  <!-- Enlace para reportar un error -->
-  <p style="margin-top: 2rem; text-align: center;">
-    <a href="mailto:ideangelis@outlook.com.ar?subject=Reporte%20de%20error%20en%20Local%2031" style="color: #FFF; text-decoration: underline;">
+  <!-- Enlace para reportar un error, bien abajo -->
+  <div class="footer-link">
+    <a href="mailto:ideangelis@outlook.com.ar?subject=Reporte%20de%20error%20en%20Local%2031">
       Reportar un error en esta página
     </a>
-  </p>
+  </div>
 
   <script>
     const audio = document.getElementById('audio');
